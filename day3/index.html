@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New York Times API Test</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">NYT Article Search</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+        # of Records<select class="form-control">
+		  <option>1</option>
+		  <option>5</option>
+		  <option>10</option>
+		  <option>15</option>
+		  <option>20</option>
+		</select>
+			Start Year<input type="text" class="form-control" placeholder="Start Year">
+			End Year<input type="text" class="form-control" placeholder="End Year">
+         	Search<input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default">Clear</button>
+      </form>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	<div class="jumbotron">
+		<h1>NYT Times</h1>
+	</div>
+	<div class="container">
+		<div class="articles panel panel-default">
+			<div class="panel-heading">
+				<h2 class="article-header"><i class="fa fa-thumb-tack" aria-hidden="true"></i>Top Articles</h2>
+			</div>
+			<div class="panel-body">
+				<div class="article-summary">
+					<h3><span class="badge">1</span>Fake Title Name</h3>
+					<p class="author">author</p>
+					<p class="section">section</p>
+					<p class="date">date</p>
+					<p class="url">url</p>
+				</div>
+			</div>
+		</div>
+	</div><!--End of container-->
+</body>
+</html>
