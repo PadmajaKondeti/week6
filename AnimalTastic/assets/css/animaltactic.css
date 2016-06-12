@@ -6,11 +6,12 @@
 #animalsView{
 	width:100%;
 }
-.animal p{
-	/*float:left; */
+
+.animalDiv p{
+	/* float:left;  */
 	width:200px;
 }
-.animal .animalImage{
+.animalDiv .animalImage{
 	float:left;
 	width:200px;
 	height:200px;
