@@ -1,4 +1,5 @@
 var animals = ['dogs', 'cats','parrots'];
+
 // displayAnimalInfo function now re-renders the HTML
 // to display the appropriate content. 
 function displayAnimalInfo(){
@@ -9,11 +10,12 @@ function displayAnimalInfo(){
 	 // Creates AJAX call for the specific animal being 
 	$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
 		var animalDiv = $('<div class="animal">');
+		
 		// Creates a generic div to hold the animal
 		for (var i = 0; i < response.data.length; i++){
 		// Retrieves the Rating Data
 			var rating = response.data[i].rating;
-			console.log(rating);
+			
 			// Creates an element to have the rating displayed
 			var pOne= $('<p>').text("Rating: "+rating);
 			animalDiv.append(pOne);
@@ -21,16 +23,17 @@ function displayAnimalInfo(){
 			var image = $('<img>').attr({
 				"data-still": response.data[i].images.fixed_height.url,
 				"data-animate": response.data[i].images.fixed_height_still.url,
-				"data-state":"still",
+				"data-state": "still",
 				"src": response.data[i].images.fixed_height_still.url,
-				"width": "200"
-			}).addClass("animalImage");
+
+			}).addClass("animalImage img-thumbnail");
 			
 			animalDiv.append(image);
 			// Puts the entire animal above the previous animals.
-			};
-			$('#animalsView').prepend(animalDiv);
+		};
+		$('#animalsView').prepend(animalDiv);
 	});
+	return false;
 };
 // Generic function for displaying animal data 
 function renderButtons(){ 
@@ -50,14 +53,19 @@ function renderButtons(){
 $(document).ready(function(){
 	// This function handles events where one button is clicked
 	$('#addAnimal').on('click', function(){
-		// This line of code will grab the input from the textbox
-		var animal = $('#animal-input').val().trim();
-		// The animal from the textbox is then added to our array
-		animals.push(animal);
-		// Our array then runs which handles the processing of our animal array
-		renderButtons();
-		// We have this line so that users can hit "enter" instead of clicking on ht button and it won't move to the next page
-		return false;
+		debugger
+		//if ($('animal-input').val().trim().length >0){
+			// This line of code will grab the input from the textbox
+			var animal = ($('#animal-input').val()).trim();
+			// The animal from the textbox is then added to our array
+			animals.push(animal);
+			// Our array then runs which handles the processing of our animal array
+			renderButtons();
+			// We have this line so that users can hit "enter" instead of clicking on ht button and it won't move to the next page
+			return false;
+		//} else {
+			//alert("please enter a value")
+		//};
 	})
 	// ========================================================
 	// Generic function for displaying the animalInfo
@@ -66,9 +74,9 @@ $(document).ready(function(){
 	// ========================================================
 	// This calls the renderButtons() function
 	renderButtons();
-	$('.animalImage').on('click', function(){
-		debugger
-
+	$(document).on('click','.animalImage', function(event){
+		event.stopPropagation();
+		//debugger
 		var state = $(this).attr('data-state');
 		if ( state == 'still'){
             $(this).attr('src', $(this).data('animate'));
@@ -77,5 +85,7 @@ $(document).ready(function(){
             $(this).attr('src', $(this).data('still'));
             $(this).attr('data-state', 'still');
         }
+         
+        //return false;
      });
 })

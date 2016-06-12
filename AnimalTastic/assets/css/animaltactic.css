@@ -3,6 +3,18 @@
 	color:#fff;
 	text-align: center;
 }
+#animalsView{
+	width:100%;
+}
+.animal p{
+	/*float:left; */
+	width:200px;
+}
+.animal .animalImage{
+	float:left;
+	width:200px;
+	height:200px;
+}
 .footer{
 	background-color: #000;
 	text-align: 	center;	
