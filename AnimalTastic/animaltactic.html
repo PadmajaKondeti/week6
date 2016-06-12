@@ -2,8 +2,7 @@
 <html>
 <head>
 <title>AnimaltTactic</title>
-<!-- Added link to the jQuery Library -->
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
+
 	<!-- Added a link to Bootstrap-->
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/animaltactic.css">
@@ -15,7 +14,9 @@
 <div class="container">
 	<div class="panel panel-default">
 	 	<!-- Rendered Buttons will get Dumped Here  -->
-		<div class="panel-heading" id="buttonView"></div>
+		<div class="panel-heading" >
+			<div id="buttonsView"></div>
+		</div>
 		<div class="panel-body">
 		<form id ="animal-form">
 			<div class="form-group">
@@ -25,12 +26,15 @@
 			<!-- Button triggers new animal to be added -->
 			<button type="submit" class="btn btn-default" id="addAnimal">Submit</button>
 		</form>
+		<div id="animalsView"></div>
 		</div>
 	</div>
 </div>
 <div class="footer">
 	 Coding Boot Camp(c)2016, All rights Reserved.
 </div>
+<!-- Added link to the jQuery Library -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.js"></script>
 <script type="text/javascript" src="assets/js/animaltastic.js"></script>
 </body>
 </html>
