@@ -16,6 +16,9 @@
 	width:200px;
 	height:200px;
 }
+.gifBlock{
+	float: left;
+}
 .footer{
 	background-color: #000;
 	text-align: 	center;	

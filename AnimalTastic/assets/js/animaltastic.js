@@ -13,12 +13,13 @@ function displayAnimalInfo(){
 		
 		// Creates a generic div to hold the animal
 		for (var i = 0; i < response.data.length; i++){
+			var gifBlock = $('<div class="gifBlock">');
 		// Retrieves the Rating Data
 			var rating = response.data[i].rating;
 			
 			// Creates an element to have the rating displayed
 			var pOne= $('<p>').text("Rating: "+rating);
-			animalDiv.append(pOne);
+			gifBlock.append(pOne);
 			// Creates an element to hold the image 
 			var image = $('<img>').attr({
 				"data-still": response.data[i].images.fixed_height_still.url,
@@ -28,8 +29,9 @@ function displayAnimalInfo(){
 
 			}).addClass("animalImage img-thumbnail");
 			
-			animalDiv.append(image);
-			
+			//animalDiv.append("<div class='gifBlock'>"+pOne+image+"</div>");
+			gifBlock.append(image);
+			animalDiv.append(gifBlock);
 			// Puts the entire animal above the previous animals.
 		};
 		$('#animalsView').prepend(animalDiv);
