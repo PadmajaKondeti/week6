@@ -5,7 +5,7 @@ var animals = ['dogs', 'cats','parrots'];
 function displayAnimalInfo(){
 	var animal = $(this).attr('data-name');
 	$('#animalsView').empty();
-	var queryURL = "http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q="
+	var queryURL = "https://crossorigin.me/http://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q="
 	 + animal + "&limit=5&rating=pg&fmt=json";
 	 // Creates AJAX call for the specific animal being 
 	$.ajax({url: queryURL, method: 'GET'}).done(function(response) {
@@ -56,7 +56,6 @@ function renderButtons(){
 $(document).ready(function(){
 	// This function handles events where one button is clicked
 	$('#addAnimal').on('click', function(){
-		debugger
 		//if ($('animal-input').val().trim().length >0){
 			// This line of code will grab the input from the textbox
 			var animal = ($('#animal-input').val()).trim();
